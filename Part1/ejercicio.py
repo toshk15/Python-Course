@@ -341,7 +341,7 @@ if __name__ == "__main__":
 #         count+=1
 
 # print(count)
-
+"""
 result = 0
 basket_items = {'apples': 4, 'oranges': 19, 'kites': 3, 'sandwiches': 8}
 fruits = ['apples', 'oranges', 'pears', 'peaches', 'grapes', 'bananas']
@@ -351,3 +351,28 @@ for key, value in basket_items.items():
 		result+=value
 	
 print(result)
+"""
+
+def search2d(mat, num):
+
+	m, n = len(mat), len(mat[0])
+	l , r = 0, (m*n - 1)
+
+	while l <= r:
+
+		mid = (l + r) // 2
+
+		target = mat[mid//n][mid%n]
+
+		if target == num:
+			return True
+
+		elif target < num:
+			l = mid + 1
+		else:
+			r = mid - 1
+	return False
+
+
+mat = [[1,2,3], [4,5,6], [7,8,9]]
+print(search2d(mat, 0))
